@@ -44,7 +44,7 @@ function updateCountdown(index) {
 // Main countdown in hero section
 function updateHeroCountdown() {
     const now = new Date().getTime();
-    const endDate = new Date("2025-12-31T23:59:59").getTime();
+    const endDate = new Date("2025-04-31T23:59:59").getTime();
     const distance = endDate - now;
 
     if (distance < 0) {
