@@ -5,12 +5,11 @@ import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from flask_cors import CORS
+
 from google.auth.transport import requests as grequests
 
 app = Flask(__name__)
 app.secret_key = '123456789'
-CORS(app)
 
 # Replace with your own Google API key and Gmail credentials
 API_KEY = "AIzaSyB5qUBYtuMMFUloOA5gRnpC-Br-aYaD4tc"
