@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dream Car Auction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='realbid.css') }}">
+
+    
+</head>
+
+
+<body>
+
+    {% extends 'base.html' %}
+
+    {% set page_class = "faq" %}
+
+{% block content %}
+
+
+
+    <div class="container">
+        <div class="card">
+            <div class="card-img-container">
+                <img src=" {{url_for('static', filename='images/p1.jpg') }}" alt="Porsche 911">
+            </div>
+            <h3>Porsche 911</h3>
+            <p>Top speed: 205 mph, 0–60 mph: 2.7s</p>
+            <p class="timer" id="countdown1">
+                <span id="days1"></span> Days <span id="hours1"></span> Hours
+                <span id="minutes1"></span> Minutes
+                <span id="seconds1"></span> Seconds
+            </p>
+        </div>
+
+        <!-- Car 2 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src=" {{url_for('static', filename='images/p2.jpg') }}" alt="Porsche 911 GT3">
+            </div>
+            <h3>Porsche 911 GT3</h3>
+            <p>Top speed: 198 mph, 0–60 mph: 3.2s</p>
+            <p class="timer" id="countdown2">
+                <span id="days2"></span> Days <span id="hours2"></span> Hours
+                <span id="minutes2"></span> Minutes
+                <span id="seconds2"></span> Seconds
+            </p>
+        </div>
+
+        <!-- Car 3 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src=" {{url_for('static', filename='images/p3.jpg') }}" alt="Mercedes">
+            </div>
+            <h3>Mercedes-AMG GT</h3>
+            <p>Top speed: 186 mph, 0–60 mph: 3.5s</p>
+            <p class="timer" id="countdown3">
+                <span id="days3"></span> Days <span id="hours3"></span> Hours
+                <span id="minutes3"></span> Minutes
+                <span id="seconds3"></span> Seconds
+            </p>
+        </div>
+
+        <!-- Car 4 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src=" {{url_for('static', filename='images/p4.jpg') }}" alt="Porsche 911">
+            </div>
+            <h3>Porsche 911 Carrera S</h3>
+            <p>Top speed: 193 mph, 0–60 mph: 3.3s</p>
+            <p class="timer" id="countdown4">
+                <span id="days4"></span> Days <span id="hours4"></span> Hours
+                <span id="minutes4"></span> Minutes
+                <span id="seconds4"></span> Seconds
+            </p>
+        </div>
+
+        <!-- Car 5 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="{{url_for('static', filename='images/p5.jpg') }}" alt="Porsche 718">
+            </div>
+            <h3>Porsche 718 Cayman</h3>
+            <p>Top speed: 188 mph, 0–60 mph: 4.0s</p>
+            <p class="timer" id="countdown5">
+                <span id="days5"></span> Days <span id="hours5"></span> Hours
+                <span id="minutes5"></span> Minutes
+                <span id="seconds5"></span> Seconds
+            </p>
+        </div>
+
+        <!-- Car 6 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="{{url_for('static', filename='images/p6.jpg') }}" alt="Porsche 718">
+            </div>
+            <h3>Porsche 718 Boxster</h3>
+            <p>Top speed: 180 mph, 0–60 mph: 4.5s</p>
+            <p class="timer" id="countdown6">
+                <span id="days6"></span> Days <span id="hours6"></span> Hours
+                <span id="minutes6"></span> Minutes
+                <span id="seconds6"></span> Seconds
+            </p>
+        </div>
+
+        <!-- Car 7 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="{{url_for('static', filename='images/p7.jpg') }}" alt="Porsche 911 Turbo">
+            </div>
+            <h3>Porsche 911 Turbo S</h3>
+            <p>Top speed: 205 mph, 0–60 mph: 2.6s</p>
+            <p class="timer" id="countdown7">
+                <span id="days7"></span> Days <span id="hours7"></span> Hours
+                <span id="minutes7"></span> Minutes
+                <span id="seconds7"></span> Seconds
+            </p>
+        </div>
+
+        <!-- Car 8 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="{{url_for('static', filename='images/p8.jpg') }}" alt="Porsche 911 Targa">
+            </div>
+            <h3>Porsche 911 Targa 4S</h3>
+            <p>Top speed: 190 mph, 0–60 mph: 3.4s</p>
+            <p class="timer" id="countdown8">
+                <span id="days8"></span> Days <span id="hours8"></span> Hours
+                <span id="minutes8"></span> Minutes
+                <span id="seconds8"></span> Seconds
+            </p>
+        </div>
+
+        <!-- Car 9 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="{{url_for('static', filename='images/p9.jpg') }}" alt="Mercedes-Benz E 300">
+            </div>
+            <h3>Mercedes-Benz E 300</h3>
+            <p>Top speed: 170 mph, 0–60 mph: 5.5s</p>
+            <p class="timer" id="countdown9">
+                <span id="days9"></span> Days <span id="hours9"></span> Hours
+                <span id="minutes9"></span> Minutes
+                <span id="seconds9"></span> Seconds
+            </p>
+        </div>
+    </div>
+
+ 
+
+   
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Timer Script -->
+    <script src="{{ url_for('static', filename='realbid.js') }}"></script>
+
+
+
+    {% endblock %}
+
+</body>
+
+</html>

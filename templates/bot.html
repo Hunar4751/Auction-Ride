@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIVA Chatbot</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='bot.css') }}">
+</head>
+
+<body>
+
+  {% extends 'base.html' %}
+
+    {% set page_class = "faq" %}
+
+{% block content %}
+    <div class="chat-container">
+        <header>
+            <div class="chat-header">Ask Me Anything About Cars!</div>
+        </header>
+
+        <!-- Fixed Center Background Heading -->
+        <div class="main-heading">
+            <h1>AR</h1>
+            <h2>CHATBOT</h2>
+        </div>
+
+        <footer>
+            <input type="text" placeholder="Send a message..." />
+            <button class="mic-btn">🎤</button>
+            <button class="send-btn">➤</button>
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='bot.js') }}"></script>
+
+{% endblock %}
+</body>
+
+</html>

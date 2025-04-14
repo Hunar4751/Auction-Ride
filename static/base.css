@@ -1,0 +1,124 @@
+ *{
+     margin: 0;
+     padding: 0;
+ }
+
+header.homepage{
+  background-color: #d9dacc;
+
+}
+header.faq{
+  color :#fff;
+  background-color: #acb8a2;
+
+}
+header {
+      padding: 40px 50px;
+      
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .logo img {
+      width: 300px;
+      margin-right: 10px;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      font-weight: 500;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    .footer.homepage{
+      
+      background-color: #a8bdaa;
+      border-top: 0px solid #ccc;
+
+      color: #333;
+
+
+    }
+.footer.faq{
+  background-color: #acb8a2;
+  border-top: 0px solid #ccc;
+
+}
+        .footer {
+    padding: 40px;
+    }
+
+    .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    }
+
+    .footer-logo {
+    flex: 1;
+    min-width: 220px;
+    margin-bottom: 20px;
+    }
+
+    .footer-logo .logo {
+    width: 40px;
+    margin-bottom: 10px;
+    }
+
+    .footer-links {
+    display: flex;
+    flex: 2;
+    justify-content: space-between;
+    min-width: 300px;
+    gap: 50px;
+    flex-wrap: wrap;
+    }
+
+    .footer-links h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+    }
+
+    .footer-links ul {
+    list-style: none;
+    padding: 0;
+    }
+
+    .footer-links ul li {
+    margin-bottom: 8px;
+    }
+
+    .footer-links ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: 0.2s ease;
+    }
+
+    .footer-links ul li a:hover {
+    text-decoration: underline;
+    }

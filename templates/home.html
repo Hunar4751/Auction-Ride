@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courier+New&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+
+
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% set page_class = "homepage" %}
+
+
+{% block content %}
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Unlock<br>the Ride</h1>
+        <p>Welcome to Auction Ride, your premier destination for live car auctions.</p>
+        <div class="buttons">
+          <A href="{{ url_for('realbid')}}"><button class="btn-orange">Bid Now</button></A>
+          <button class="btn-light">View Catalog</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="{{ url_for('static', filename='images/car1.jpg') }}" alt="Auction Car" />
+      </div>
+    </section>
+
+    <!-- Featured Cars Section -->
+    <section class="featured-section">
+      <h1>Featured Cars</h1>
+      <p>Discover a wide range of premium vehicles up for auction</p>
+
+      <div class="cars-container">
+        <div class="car-card">
+          <img src="{{ url_for('static', filename='images/car-white.jpg') }}" alt="White Car" />
+          <h2>White</h2>
+          <p>With its sleek design and powerful performance, this car is a true must-have.</p>
+          <button>Place Bid</button>
+          <span class="status">Auction Ends in 15</span>
+        </div>
+
+        <div class="car-card">
+          <img src="{{ url_for('static', filename='images/car-green.jpg') }}" alt="Green Car" />
+          <h2>Green Glory</h2>
+          <p>Prepare to be captivated by the stunning design of this beauty.</p>
+          <button>Place Bid</button>
+          <span class="status">Auction Closes Soon</span>
+        </div>
+
+        <div class="car-card">
+          <img src="{{ url_for('static', filename='images/car-orange.jpg') }}" alt="Orange Car" />
+          <h2>Timeless</h2>
+          <p>Indulge in the epitome of sophistication with this remarkable automobile.</p>
+          <A href="{{ url_for('realbid')}}"><button>Place Bid</button></A>
+
+          <span class="status">Act Fast</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="feature-card">
+        <img src="{{ url_for('static', filename='images/cara.png') }}" alt="Pristine Perfection" />
+        <h3>Pristine<br />Perfection</h3>
+      </div>
+      <div class="feature-card">
+        <img src="{{ url_for('static', filename='images/carb.png') }}" alt="Elegant Allure" />
+        <h3>Elegant<br />Allure</h3>
+      </div>
+      <div class="feature-card">
+        <img src="{{ url_for('static', filename='images/carc.png') }}" alt="Refined Sophistication" />
+        <h3>Refined<br />Sophistication</h3>
+      </div>
+      <div class="feature-card">
+        <img src="{{ url_for('static', filename='images/card.png') }}" alt="Striking Presence" />
+        <h3>Striking<br />Presence</h3>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+      <h2>How It Works</h2>
+      <p>Navigating the Auction Ride platform is a breeze. Easily browse our selection of featured vehicles.</p>
+    </section>
+
+    <!-- Additional Featured Cars Section -->
+    <div class="container">
+      <!-- Left Block -->
+      <div class="left-block">
+        <div class="card">
+          <img src=" {{url_for('static', filename='images/carde.jpg') }}" alt="Porsche Panamera" class="image" />
+        </div>
+        <div class="card-content">
+          <A href="{{ url_for('realbid')}}"><button class="bid-btn">Place Bid</button></A>
+
+          <div class="car-info">
+            <h2>Porsche Panamera</h2>
+            <p>The Porsche Panamera combines unparalleled performance with refined elegance</p>
+            <div class="action-buttons">
+              <button class="buy-btn">Buy Now</button>
+              <button class="watch-btn">Watch Live</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Block -->
+      <div class="right-block">
+        <div class="card-content">
+          <button class="bid-btn">Place Bid</button>
+          <div class="car-info">
+            <h2>Jaguar I-PACE</h2>
+            <p>Experience the future of automotive innovation with the Jaguar I-PACE</p>
+            <div class="action-buttons">
+              <button class="buy-btn">Buy Now</button>
+              <button class="watch-btn">Watch Live</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src=" {{url_for('static', filename='images/cardf.jpg') }}" alt="Jaguar I-PACE" class="image" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Auction Updates Section -->
+    <section class="auction-updates">
+      <div class="left-section">
+        <h2>Auction Updates</h2>
+        <p>Stay up-to-date on the latest auction activity and featured vehicles in our platform. Discover what's new, trending, and exclusive.</p>
+
+        <div class="info-block">
+          <div class="icon-circle">
+            <img src=" {{url_for('static', filename='images/dr.jpg') }}" alt="Partners Icon">
+          </div>
+          <div class="info-text">
+            <h4>Partners</h4>
+            <p>Auction Ride proudly collaborates with top industry players.</p>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="icon-circle">
+            <img src=" {{url_for('static', filename='images/bus.jpg') }}" alt="Events Icon">
+          </div>
+          <div class="info-text">
+            <h4>Events</h4>
+            <p>Join us for exclusive and exciting automotive events.</p>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="icon-circle">
+            <img src=" {{url_for('static', filename='images/ka.jpg') }}" alt="FAQ Icon">
+          </div>
+          <div class="info-text">
+            <h4>FAQ</h4>
+            <p>Find answers to all your auction-related questions here.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-section">
+        <img src=" {{url_for('static', filename='images/carg.jpg') }}" alt="Orange Audi Car" />
+      </div>
+    </section>
+
+    <!-- Experience Section (from code 2) -->
+    <section class="experience-section">
+      <div class="experience-content">
+        <h1>Auction Ride</h1>
+        <p>Your next ride is just a bid away</p>
+
+      </div>
+    </section>
+  </main>
+{% endblock %}
+
+</body>
+</html>

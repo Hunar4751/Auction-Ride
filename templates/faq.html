@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - Amazing Features</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='faq.css') }}">
+    
+    
+</head>
+
+<body>
+    {% extends 'base.html' %}
+
+    {% set page_class = "faq" %}
+
+{% block content %}
+    <div class="container">
+        <h1>FAQ's...</h1>
+        <div class="faq-item">
+            <div class="faq-question">
+                <div class="icon"><img src="{{ url_for('static', filename='images/arrow.png') }}" alt="icon"></div>
+                <div class="question-text">
+                    How does the car auction process work?
+                </div>
+            </div>
+            <div class="faq-answer">
+                Our auctions are simple! Create an account, browse available cars, place your bid, and the highest bidder at the end of the auction wins the car.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <div class="icon"><img src="{{ url_for('static', filename='images/arrow.png') }}" alt="icon"></div>
+                <div class="question-text">Is there a registration fee?</div>
+            </div>
+            <div class="faq-answer">
+                No, creating an account and registering on our platform is completely free.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <div class="icon"><img src="{{ url_for('static', filename='images/arrow.png') }}" alt="icon"></div>
+                <div class="question-text">Are the cars inspected before listing?</div>
+            </div>
+            <div class="faq-answer">
+                Yes, all vehicles go through a thorough inspection and verification before being listed for auction. Each listing includes detailed condition reports.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <div class="icon"><img src="{{ url_for('static', filename='images/arrow.png') }}" alt="icon"></div>
+                <div class="question-text">Are there any hidden charges?</div>
+            </div>
+            <div class="faq-answer">
+                No hidden charges. The buyer only pays the winning bid amount and a small service fee, clearly mentioned before checkout.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <div class="icon"><img src="{{ url_for('static', filename='images/arrow.png') }}" alt="icon"></div>
+                <div class="question-text">
+                    How do I contact support if I face an issue?</div>
+            </div>
+            <div class="faq-answer">
+                You can reach our support team via live chat, email, or our contact form available on the website.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <div class="icon"><img src="{{ url_for('static', filename='images/arrow.png') }}" alt="icon"></div>
+                <div class="question-text">
+                    Is my payment information safe?</div>
+            </div>
+            <div class="faq-answer">
+                Yes, we use industry-standard encryption and secure payment gateways to protect your data.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <div class="icon"><img src="{{ url_for('static', filename='images/arrow.png') }}" alt="icon"></div>
+                <div class="question-text">How do I know if a car is accidental or not?</div>
+            </div>
+            <div class="faq-answer">
+                Our inspection report mentions any accident history, major repairs, or frame damage clearly.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <div class="icon"><img src="{{ url_for('static', filename='images/arrow.png') }}" alt="icon"></div>
+                <div class="question-text">What types of vehicles are listed?</div>
+            </div>
+            <div class="faq-answer">
+                We list used cars, new cars, SUVs, sedans, hatchbacks, commercial vehicles, and even vintage cars.</div>
+        </div>
+    </div>
+<script src="{{ url_for('static', filename='faq.js') }}"></script>
+   
+    {% endblock %}
+</body>
+
+
+</html>

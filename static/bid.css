@@ -1,0 +1,133 @@
+
+* {
+  font-family:'Courier New', Courier, monospace;
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:'Courier New', Courier, monospace;
+  background-color: #f8f1e7;
+  padding: 40px 20px;
+}
+
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.text-content {
+  flex: 1 1 400px;
+  min-width: 280px;
+}
+
+.text-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.3em;
+  color: #000;
+}
+
+.countdown-timer {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: red;
+  margin-bottom: 1em;
+}
+
+.text-content p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+}
+
+.bid-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bid-section input {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 250px;
+}
+
+.place-bid-button {
+  background-color: #103d32;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-weight: bold;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  max-width: 250px;
+  transition: background-color 0.3s ease, opacity 1s ease;
+}
+
+.place-bid-button:hover {
+  background-color: #0d2f27;
+}
+
+.place-bid-button.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.latest-bid {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.error-message {
+  color: red;
+  font-size: 1.1rem;
+}
+
+.winner-message {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: green;
+  font-weight: bold;
+}
+
+.image-content {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  min-width: 280px;
+}
+
+.image-content img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bid-section input,
+  .place-bid-button {
+    margin: auto;
+  }
+
+  .text-content h1 {
+    font-size: 2.5rem;
+  }
+}
