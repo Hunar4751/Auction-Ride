@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, session, redirect, jsonify
 import google.oauth2.id_token
+import os
 from google.auth.transport import requests as grequests
 
 app = Flask(__name__)
@@ -60,6 +61,5 @@ def bid():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
-
-
+    port = int(os.environ.get('PORT', 5000))  
+    app.run(debug=True, host='0.0.0.0', port=port)  
