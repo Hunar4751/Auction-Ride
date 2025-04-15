@@ -5,13 +5,15 @@ body{
 }
 
 .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 80px 60px;
-      flex-wrap: wrap;
-      background-color: #d9dacc;
-    }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 60px;
+  flex-wrap: wrap;
+  background-color: #d9dacc;
+}
+
+
 
     .hero-text {
       max-width: 520px;
@@ -48,6 +50,10 @@ body{
       border-radius: 10px;
       cursor: pointer;
     }
+
+
+
+    
 
     .btn-light {
       background-color: #f3f4d7;
