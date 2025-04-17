@@ -6,16 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQ - Amazing Features</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='faq.css') }}">
-    
-    
+
+
+
 </head>
 
 <body>
-    {% extends 'base.html' %}
-
-    {% set page_class = "faq" %}
-
-{% block content %}
+    {% extends 'base.html' %} {% set page_class = "faq" %} {% block content %}
     <div class="container">
         <h1>FAQ's...</h1>
         <div class="faq-item">
@@ -90,8 +87,8 @@
                 We list used cars, new cars, SUVs, sedans, hatchbacks, commercial vehicles, and even vintage cars.</div>
         </div>
     </div>
-<script src="{{ url_for('static', filename='faq.js') }}"></script>
-   
+    <script src="{{ url_for('static', filename='faq.js') }}"></script>
+
     {% endblock %}
 </body>
 

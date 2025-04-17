@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="{{ url_for('static', filename='bid.css') }}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='bid.css') }}">
+    <title>Car Auction Bid</title>
 
-  <title>Car Auction Bid</title>
- 
+
 </head>
+
 <body>
-  {% extends 'base.html' %}
+    {% extends 'base.html' %} {% set page_class = "faq" %} {% block content %}
 
-  {% set page_class = "faq" %}
+    <div class="about-section">
+        <div class="text-content">
+            <h1>Porche 911</h1>
+            <div class="countdown-timer" id="countdown">Auction ends in: --:--:--</div>
+            <p>
+                Explore our diverse collection of premium vehicles,<br /> carefully curated for your bidding pleasure.
+            </p>
 
-{% block content %}
+            <div class="bid-section">
+                <input type="number" id="bidAmount" placeholder="Enter your bid (£)" />
+                <button class="place-bid-button" id="placeBidBtn" onclick="placeBid()">Place Bid</button>
+                <div class="latest-bid" id="latestBid">Current Bid: £3610.00</div>
+                <div class="error-message" id="errorMessage"></div>
+                <div class="winner-message" id="winnerMessage"></div>
+            </div>
+        </div>
 
-  <div class="about-section">
-    <div class="text-content">
-      <h1>Porche 911</h1>
-      <div class="countdown-timer" id="countdown">Auction ends in: --:--:--</div>
-      <p>
-        Explore our diverse collection of premium vehicles,<br />
-        carefully curated for your bidding pleasure.
-      </p>
-
-      <div class="bid-section">
-        <input type="number" id="bidAmount" placeholder="Enter your bid (£)" />
-        <button class="place-bid-button" id="placeBidBtn" onclick="placeBid()">Place Bid</button>
-        <div class="latest-bid" id="latestBid">Current Bid: £3610.00</div>
-        <div class="error-message" id="errorMessage"></div>
-        <div class="winner-message" id="winnerMessage"></div>
-      </div>
+        <div class="image-content">
+            <img src="aboutc1.png" alt="Vintage Car" />
+        </div>
     </div>
-
-    <div class="image-content">
-      <img src="aboutc1.png" alt="Vintage Car" />
-    </div>
-  </div>
-  <script src="{{ url_for('static', filename='bid.js') }}"></script>
+    <script src="{{ url_for('static', filename='bid.js') }}"></script>
 
 
-  {% endblock %}
+    {% endblock %}
 </body>
+
 </html>
