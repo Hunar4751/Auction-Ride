@@ -1,10 +1,17 @@
 
 const maxAccounts = 20;
 
+
+
+
+
 function toggleForm() {
   document.getElementById("loginBox").classList.toggle("active");
   document.getElementById("signupBox").classList.toggle("active");
 }
+
+
+
 
 function validateEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
