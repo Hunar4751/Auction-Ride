@@ -18,6 +18,11 @@ function validateEmail(email) {
   return regex.test(email);
 }
 
+
+
+
+
+
 function validatePassword(password) {
   if (password.length < 8) return "Password must be at least 8 characters long.";
   if (!/[A-Z]/.test(password)) return "Password must include at least one uppercase letter.";
@@ -32,6 +37,10 @@ function markValid(input, errorDiv) {
   input.classList.add('valid');
   errorDiv.textContent = '';
 }
+
+
+
+
 
 function markError(input, errorDiv, message) {
   input.classList.remove('valid');
