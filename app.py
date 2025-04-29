@@ -11,13 +11,11 @@ from google.auth.transport import requests as grequests
 app = Flask(__name__)
 app.secret_key = '123456789'
 
-# Replace with your own Google API key and Gmail credentials
 API_KEY = "AIzaSyB5qUBYtuMMFUloOA5gRnpC-Br-aYaD4tc"
 
-# ---------- Email Function ----------
 def send_email(to_email, subject, body):
     sender_email = "100daysofpythong@gmail.com"
-    sender_password = "tsfuizzdiojpaeka"  # Use an App Password for Gmail with 2FA
+    sender_password = "tsfuizzdiojpaeka"  
 
     message = MIMEMultipart()
     message["From"] = sender_email
@@ -33,7 +31,6 @@ def send_email(to_email, subject, body):
     except Exception as e:
         print(f"Failed to send email: {e}")
 
-# ---------- Routes ----------
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -72,7 +69,6 @@ def google_login():
             'picture': id_info.get('picture')
         }
 
-        # Send welcome email
         send_email(
             to_email=id_info['email'],
             subject="Welcome to Auction Ride!",

@@ -7,41 +7,36 @@
     <title>Dream Car Auction</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='realbid.css') }}">
 
-    
+
 </head>
 
 
 <body>
 
-    {% extends 'base.html' %}
-
-    {% set page_class = "faq" %}
-
-{% block content %}
+    {% extends 'base.html' %} {% set page_class = "faq" %} {% block content %}
 
 
-            <a href="{{ url_for('finalbid', carname='Porshe 911 GT3', pic='images/p1.jpg', timer='2025-04-17T12:00:00') }}" style="text-decoration: none;">
+    <a href="{{ url_for('finalbid', carname='Porshe 911 GT3', pic='images/p1.jpg', timer='2025-04-17T12:00:00') }}" style="text-decoration: none;">
 
 
 
-    <div class="container">
-        <div class="card">
-            <div class="card-img-container">
-                <img src=" {{url_for('static', filename='images/p1.jpg') }}" alt="Porsche 911">
+        <div class="container">
+            <div class="card">
+                <div class="card-img-container">
+                    <img src=" {{url_for('static', filename='images/p1.jpg') }}" alt="Porsche 911">
+                </div>
+                <h3>Porsche 911</h3>
+                <p>Top speed: 205 mph, 0–60 mph: 2.7s</p>
+                <p class="timer" id="countdown1">
+                    <span id="days1"></span> Days <span id="hours1"></span> Hours
+                    <span id="minutes1"></span> Minutes
+                    <span id="seconds1"></span> Seconds
+                </p>
             </div>
-            <h3>Porsche 911</h3>
-            <p>Top speed: 205 mph, 0–60 mph: 2.7s</p>
-            <p class="timer" id="countdown1">
-                <span id="days1"></span> Days <span id="hours1"></span> Hours
-                <span id="minutes1"></span> Minutes
-                <span id="seconds1"></span> Seconds
-            </p>
-        </div>
-                </a>
-        
+    </a>
 
-        <!-- Car 2 -->
-        <a href="{{ url_for('finalbid', carname='Mercedes-AMG GT', pic='images/p2.jpg', timer='2025-04-16T12:00:00') }}" style="text-decoration: none;">
+
+    <a href="{{ url_for('finalbid', carname='Mercedes-AMG GT', pic='images/p2.jpg', timer='2025-04-16T12:00:00') }}" style="text-decoration: none;">
         <div class="card">
             <div class="card-img-container">
                 <img src=" {{url_for('static', filename='images/p2.jpg') }}" alt="Porsche 911 GT3">
@@ -54,10 +49,9 @@
                 <span id="seconds2"></span> Seconds
             </p>
         </div>
-                </a>
+    </a>
 
-        <!-- Car 3 -->
-        <a href="{{ url_for('finalbid', carname='Porshe 911 Carrera S', pic='images/p3.jpg', timer='2025-04-15T12:00:00') }}" style="text-decoration: none;">
+    <a href="{{ url_for('finalbid', carname='Porshe 911 Carrera S', pic='images/p3.jpg', timer='2025-04-15T12:00:00') }}" style="text-decoration: none;">
 
         <div class="card">
             <div class="card-img-container">
@@ -71,10 +65,9 @@
                 <span id="seconds3"></span> Seconds
             </p>
         </div>
-                </a>
+    </a>
 
-        <!-- Car 4 -->
-        <a href="{{ url_for('finalbid', carname='Porshe 911 Carrera S', pic='images/p4.jpg', timer='2025-04-17T12:00:00') }}" style="text-decoration: none;">
+    <a href="{{ url_for('finalbid', carname='Porshe 911 Carrera S', pic='images/p4.jpg', timer='2025-04-17T12:00:00') }}" style="text-decoration: none;">
 
         <div class="card">
             <div class="card-img-container">
@@ -88,10 +81,9 @@
                 <span id="seconds4"></span> Seconds
             </p>
         </div>
-                </a>
+    </a>
 
-        <!-- Car 5 -->
-        <a href="{{ url_for('finalbid', carname='Porshe 718 Cayman', pic='images/p5.jpg', timer='2025-04-16T12:00:00') }}" style="text-decoration: none;">
+    <a href="{{ url_for('finalbid', carname='Porshe 718 Cayman', pic='images/p5.jpg', timer='2025-04-16T12:00:00') }}" style="text-decoration: none;">
 
         <div class="card">
             <div class="card-img-container">
@@ -105,10 +97,9 @@
                 <span id="seconds5"></span> Seconds
             </p>
         </div>
-                </a>
+    </a>
 
-        <!-- Car 6 -->
-        <a href="{{ url_for('finalbid', carname='Porshe 718 Voxster', pic='images/p6.jpg', timer='2025-04-15T12:00:00') }}" style="text-decoration: none;">
+    <a href="{{ url_for('finalbid', carname='Porshe 718 Voxster', pic='images/p6.jpg', timer='2025-04-15T12:00:00') }}" style="text-decoration: none;">
 
 
 
@@ -124,10 +115,9 @@
                 <span id="seconds6"></span> Seconds
             </p>
         </div>
-                </a>
+    </a>
 
-        <!-- Car 7 -->
-        <a href="{{ url_for('finalbid', carname='Porshe 911 Turbo S', pic='images/p7.jpg', timer='2025-04-16T12:00:00') }}" style="text-decoration: none;">
+    <a href="{{ url_for('finalbid', carname='Porshe 911 Turbo S', pic='images/p7.jpg', timer='2025-04-16T12:00:00') }}" style="text-decoration: none;">
         <div class="card">
             <div class="card-img-container">
                 <img src="{{url_for('static', filename='images/p7.jpg') }}" alt="Porsche 911 Turbo">
@@ -140,25 +130,24 @@
                 <span id="seconds7"></span> Seconds
             </p>
         </div>
-                </a>
+    </a>
 
-        <!-- Car 8 -->
-        <a href="{{ url_for('finalbid', carname='Porshe 911 Targa 4s', pic='images/p8.jpg', timer='2024-04-16T12:00:00') }}" style="text-decoration: none;">            <div class="card">
-                <div class="card-img-container">
-                    <img src="{{url_for('static', filename='images/p8.jpg') }}" alt="Porsche 911 Targa">
-                </div>
-                <h3>Porsche 911 Targa 4S</h3>
-                <p>Top speed: 190 mph, 0–60 mph: 3.4s</p>
-                <p class="timer" id="countdown8">
-                    <span id="days8"></span> Days <span id="hours8"></span> Hours
-                    <span id="minutes8"></span> Minutes
-                    <span id="seconds8"></span> Seconds
-                </p>
+    <a href="{{ url_for('finalbid', carname='Porshe 911 Targa 4s', pic='images/p8.jpg', timer='2024-04-16T12:00:00') }}" style="text-decoration: none;">
+        <div class="card">
+            <div class="card-img-container">
+                <img src="{{url_for('static', filename='images/p8.jpg') }}" alt="Porsche 911 Targa">
             </div>
-        </a>
+            <h3>Porsche 911 Targa 4S</h3>
+            <p>Top speed: 190 mph, 0–60 mph: 3.4s</p>
+            <p class="timer" id="countdown8">
+                <span id="days8"></span> Days <span id="hours8"></span> Hours
+                <span id="minutes8"></span> Minutes
+                <span id="seconds8"></span> Seconds
+            </p>
+        </div>
+    </a>
 
-        <!-- Car 9 -->
-        <a href="{{ url_for('finalbid', carname='Mercedes-Benz E 300', pic='images/p9.jpg', timer='2025-04-16T12:00:00') }}" style="text-decoration: none;">
+    <a href="{{ url_for('finalbid', carname='Mercedes-Benz E 300', pic='images/p9.jpg', timer='2025-04-16T12:00:00') }}" style="text-decoration: none;">
         <div class="card">
             <div class="card-img-container">
                 <img src="{{url_for('static', filename='images/p9.jpg') }}" alt="Mercedes-Benz E 300">
@@ -171,16 +160,14 @@
                 <span id="seconds9"></span> Seconds
             </p>
         </div>
-    </div>
-            </a>
+        </div>
+    </a>
 
- 
 
-   
-    <!-- Font Awesome for icons -->
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <!-- Timer Script -->
     <script src="{{ url_for('static', filename='realbid.js') }}"></script>
 
 

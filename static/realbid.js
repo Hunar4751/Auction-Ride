@@ -1,4 +1,3 @@
-// Header scroll effect
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.header');
     if (window.scrollY > 50) {
@@ -44,7 +43,7 @@ function updateCountdown(index) {
 
 
 
-    
+
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -56,7 +55,6 @@ function updateCountdown(index) {
     document.getElementById(`seconds${index + 1}`).innerHTML = seconds;
 }
 
-// Main countdown in hero section
 function updateHeroCountdown() {
     const now = new Date().getTime();
     const endDate = new Date("2025-04-31T23:59:59").getTime();
@@ -82,13 +80,11 @@ setInterval(() => {
     updateHeroCountdown();
 }, 1000);
 
-// Initialize immediately
 for (let i = 0; i < auctionEndDate.length; i++) {
     updateCountdown(i);
 }
 updateHeroCountdown();
 
-// Create floating particles
 function createParticles() {
     const colors = ['rgba(255,122,0,0.3)', 'rgba(30,46,44,0.2)', 'rgba(255,255,255,0.2)'];
 
@@ -96,7 +92,6 @@ function createParticles() {
         const particle = document.createElement('div');
         particle.classList.add('particle');
 
-        // Random properties
         const size = Math.random() * 10 + 5;
         const color = colors[Math.floor(Math.random() * colors.length)];
         const posX = Math.random() * window.innerWidth;
@@ -104,17 +99,15 @@ function createParticles() {
         const duration = Math.random() * 20 + 10;
         const delay = Math.random() * 5;
 
-        // Apply styles
         particle.style.width = `${size}px`;
-        particle.style.height =` ${size}px`;
+        particle.style.height = ` ${size}px`;
         particle.style.backgroundColor = color;
-        particle.style.left =` ${posX}px`;
-        particle.style.top =` ${posY}px`;
+        particle.style.left = ` ${posX}px`;
+        particle.style.top = ` ${posY}px`;
         particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
 
         document.body.appendChild(particle);
     }
 }
 
-// Call the function when the page loads
 window.addEventListener('load', createParticles);

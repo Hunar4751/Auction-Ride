@@ -1,575 +1,551 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Car Auction - Discover Your Dream Car</title>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Courier+New&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Courier New', monospace;
-    }
-
-    /* Navbar styles from Code 1 */
-    header {
-      background-color: #d9dacc;
-      padding: 20px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      width: 100%;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #000;
-    }
-
-    .logo img {
-      width: 300px;
-      margin-right: 10px;
-    }
-
-    nav {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      font-weight: 500;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #444;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #000;
-    }
-
-    body {
-      background-color: #f8f1e7;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    /* main {
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Auction - Discover Your Dream Car</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+New&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        header {
+            background-color: #d9dacc;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #000;
+        }
+        
+        .logo img {
+            width: 300px;
+            margin-right: 10px;
+        }
+        
+        nav {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-weight: 500;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #444;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #000;
+        }
+        
+        body {
+            background-color: #f8f1e7;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        /* main {
       flex: 1;
       padding: 20px;
     } */
-
-    /* Hero Section Styles */
-    .hero-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #d9dacc;
-      /* border-radius: 8px; */
-      padding: 40px 30px;
-      width: 100%;
-      /* margin: 40px auto; */
-      /* gap: 20px; */
-      flex-wrap: wrap;
-    }
-    
-    .hero-text {
-      flex: 1 1 45%;
-      color: rgba(0,0,0,0.8);
-    }
-
-    .hero-text h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-
-    .hero-text p {
-      font-size: 1rem;
-      color: #b5b5b5;
-      margin-bottom: 30px;
-      line-height: 1.5;
-    }
-
-    .hero-text .btn {
-      background-color: #103d32;
-      color: white;
-      padding: 14px 28px;
-      font-size: 1rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .hero-text .btn:hover {
-      background-color: #134f40c4;
-    }
-
-    .hero-image {
-      flex: 1 1 45%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-image img {
-      max-width: 100%;
-      height: 300px;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-
-    /* Auction Section Styles */
-    .auction-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 40px auto;
-      flex-wrap: wrap;
-      gap: 40px;
-      background-color: white;
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .text-content {
-      flex: 1 1 400px;
-      min-width: 280px;
-    }
-
-    .text-content h1 {
-      font-size: 3rem;
-      margin-bottom: 0.3em;
-      color: #000;
-    }
-
-    .countdown-timer {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: red;
-      margin-bottom: 1em;
-    }
-
-    .text-content p {
-      color: #555;
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 1.5em;
-    }
-
-    .bid-section {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .bid-section input {
-      padding: 12px;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      max-width: 250px;
-    }
-
-    .place-bid-button {
-      background-color: #103d32;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      font-weight: bold;
-      border-radius: 12px;
-      font-size: 1rem;
-      cursor: pointer;
-      max-width: 250px;
-      transition: background-color 0.3s ease, opacity 1s ease;
-    }
-
-    .place-bid-button:hover {
-      background-color: #0d2f27;
-    }
-
-    .place-bid-button.disabled {
-      opacity: 0.5;
-      pointer-events: none;
-    }
-
-    .latest-bid {
-      margin-top: 15px;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: #333;
-    }
-
-    .error-message {
-      color: red;
-      font-size: 1.1rem;
-    }
-
-    .winner-message {
-      margin-top: 10px;
-      font-size: 1.1rem;
-      color: green;
-      font-weight: bold;
-    }
-
-    .image-content {
-      flex: 1 1 400px;
-      display: flex;
-      justify-content: center;
-      min-width: 280px;
-    }
-
-    .image-content img {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 16px;
-      height: auto;
-    }
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    .grid-item h3 {
-      font-size: 1.3rem;
-      font-weight: bold;
-      margin-bottom: 8px;
-      color: #222;
-    }
-
-    .grid-item p {
-      font-size: 0.95rem;
-      color: #444;
-      line-height: 1.5;
-    }
-
-    /* Footer styles from Code 1 */
-    .footer {
-      background-color: #d9dacc;
-      padding: 40px;
-      color: #333;
-      /* border-top: 1px solid #ccc; */
-      width: 100%;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .footer-logo {
-      flex: 1;
-      min-width: 220px;
-      margin-bottom: 20px;
-    }
-
-    .footer-logo .logo {
-      width: 320px;
-      margin-bottom: 50px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex: 2;
-      justify-content: space-between;
-      min-width: 300px;
-      gap: 50px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links h4 {
-      font-size: 16px;
-      margin-bottom: 10px;
-      color: #333;
-    }
-
-    .footer-links ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .footer-links ul li {
-      margin-bottom: 8px;
-    }
-
-    .footer-links ul li a {
-      text-decoration: none;
-      color: #333;
-      transition: 0.2s ease;
-    }
-
-    .footer-links ul li a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        padding: 20px;
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      .logo {
-        font-size: 1.3rem;
-      }
-
-      nav {
-        gap: 15px;
-        justify-content: center;
-      }
-
-      .hero-section, .auction-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 20px;
-      }
-
-      .hero-text h1, .text-content h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero-text p {
-        font-size: 0.95rem;
-      }
-
-      .hero-text .btn {
-        padding: 12px 24px;
-      }
-
-      .bid-section input,
-      .place-bid-button {
-        margin: auto;
-      }
-
-      .hero-image img {
-        height: auto;
-        max-height: 300px;
-      }
-
-      .experience-content {
-        padding: 40px 30px;
-      }
-
-      .experience-content h1 {
-        font-size: 2rem;
-      }
-
-      .grid-item h3 {
-        font-size: 1.1rem;
-      }
-
-      .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .footer-links {
-        justify-content: center;
-        gap: 30px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .experience-content {
-        padding: 30px 20px;
-      }
-
-      .experience-content h1 {
-        font-size: 1.6rem;
-      }
-
-      .grid-container {
-        gap: 20px;
-      }
-
-      .footer {
-        padding: 30px 20px;
-      }
-
-      .footer-links {
-        flex-direction: column;
-        gap: 20px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <!-- Navbar from Code 1 -->
-  <header>
-    <div class="logo">
-      <img src="{{url_for('static', filename='images/logo.png') }}" alt="Logo">
-    </div>
-    <nav>
-      <a href="{{ url_for('home')}}">Home</a>
-      <a href="{{ url_for('bot')}}">Bot</a>
-      <a href="{{ url_for('realbid')}}">Bid</a>
-      <a href="{{ url_for('faq') }}">FAQ</a>
-      <a href="{{ url_for('login') }}">Login</a>
-    </nav>
-  </header>
-
-  <main>
-    <!-- Auction Section -->
-    <section class="auction-section">
-      <div class="text-content">
-        <h1>{{carname}}</h1>
-        <div class="countdown-timer" id="countdown">Auction ends in: --:--:--</div>
-        <p>
-          Explore our diverse collection of premium vehicles,<br />
-          carefully curated for your bidding pleasure.
-        </p>
-
-        <div class="bid-section">
-          <input type="number" id="bidAmount" placeholder="Enter your bid (£)" />
-          <button class="place-bid-button" id="placeBidBtn" onclick="placeBid()">Place Bid</button>
-          <div class="latest-bid" id="latestBid">Current Bid: £3610.00</div>
-          <div class="error-message" id="errorMessage"></div>
-          <div class="winner-message" id="winnerMessage"></div>
-        </div>
-      </div>
-
-      <div class="image-content">
-        <img src="{{ url_for('static', filename=pic) }}" alt="Vintage Car" />
-      </div>
-    </section>
-    
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-image">
-        <img src="http://127.0.0.1:5000/static/images/car1.jpg" alt="Orange Car" />
-      </div>
-      <div class="hero-text">
-        <h1>Discover Your<br>Dream Car</h1>
-        <p>
-          Welcome to our live car auction, where you can browse, bid, and own the luxury or performance vehicle of your dreams. With real-time bidding and a countdown timer
-        </p>
         
-        <a href="https://discord.gg/XxHfPDPG"> <button class="btn">Join Now</button></a>
-      </div>
-      
-      
-    </section>
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #d9dacc;
+            /* border-radius: 8px; */
+            padding: 40px 30px;
+            width: 100%;
+            /* margin: 40px auto; */
+            /* gap: 20px; */
+            flex-wrap: wrap;
+        }
+        
+        .hero-text {
+            flex: 1 1 45%;
+            color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .hero-text p {
+            font-size: 1rem;
+            color: #b5b5b5;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        
+        .hero-text .btn {
+            background-color: #103d32;
+            color: white;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .hero-text .btn:hover {
+            background-color: #134f40c4;
+        }
+        
+        .hero-image {
+            flex: 1 1 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: 300px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        
+        .auction-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 40px auto;
+            flex-wrap: wrap;
+            gap: 40px;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .text-content {
+            flex: 1 1 400px;
+            min-width: 280px;
+        }
+        
+        .text-content h1 {
+            font-size: 3rem;
+            margin-bottom: 0.3em;
+            color: #000;
+        }
+        
+        .countdown-timer {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: red;
+            margin-bottom: 1em;
+        }
+        
+        .text-content p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5em;
+        }
+        
+        .bid-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .bid-section input {
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            max-width: 250px;
+        }
+        
+        .place-bid-button {
+            background-color: #103d32;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-weight: bold;
+            border-radius: 12px;
+            font-size: 1rem;
+            cursor: pointer;
+            max-width: 250px;
+            transition: background-color 0.3s ease, opacity 1s ease;
+        }
+        
+        .place-bid-button:hover {
+            background-color: #0d2f27;
+        }
+        
+        .place-bid-button.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        
+        .latest-bid {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .error-message {
+            color: red;
+            font-size: 1.1rem;
+        }
+        
+        .winner-message {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            color: green;
+            font-weight: bold;
+        }
+        
+        .image-content {
+            flex: 1 1 400px;
+            display: flex;
+            justify-content: center;
+            min-width: 280px;
+        }
+        
+        .image-content img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 16px;
+            height: auto;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        
+        .grid-item h3 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #222;
+        }
+        
+        .grid-item p {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.5;
+        }
+        
+        .footer {
+            background-color: #d9dacc;
+            padding: 40px;
+            color: #333;
+            width: 100%;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 220px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo .logo {
+            width: 320px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex: 2;
+            justify-content: space-between;
+            min-width: 300px;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links ul li a {
+            text-decoration: none;
+            color: #333;
+            transition: 0.2s ease;
+        }
+        
+        .footer-links ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            .logo {
+                font-size: 1.3rem;
+            }
+            nav {
+                gap: 15px;
+                justify-content: center;
+            }
+            .hero-section,
+            .auction-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            .hero-text h1,
+            .text-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-text p {
+                font-size: 0.95rem;
+            }
+            .hero-text .btn {
+                padding: 12px 24px;
+            }
+            .bid-section input,
+            .place-bid-button {
+                margin: auto;
+            }
+            .hero-image img {
+                height: auto;
+                max-height: 300px;
+            }
+            .experience-content {
+                padding: 40px 30px;
+            }
+            .experience-content h1 {
+                font-size: 2rem;
+            }
+            .grid-item h3 {
+                font-size: 1.1rem;
+            }
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .footer-links {
+                justify-content: center;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .experience-content {
+                padding: 30px 20px;
+            }
+            .experience-content h1 {
+                font-size: 1.6rem;
+            }
+            .grid-container {
+                gap: 20px;
+            }
+            .footer {
+                padding: 30px 20px;
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
 
-    <!-- Experience Section from Code 1 -->
-  </main>
-
-  <!-- Footer from Code 1 -->
-  <footer class="footer">
-    <div class="footer-content">
-      <!-- Logo and Copyright -->
-      <div class="footer-logo">
-        <img src="{{url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo" />
-        <p>© 2025 RideAuct, Inc.<br>All rights reserved.</p>
-      </div>
-
-      <!-- Links: Quick, Company, Resources -->
-      <div class="footer-links">
-        <div>
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{url_for('static', filename='images/logo.png') }}" alt="Logo">
         </div>
-        <div>
-          <h4>Company</h4>
-          <ul>
-            <li><a href="#">Partners</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Support</a></li>
-          </ul>
+        <nav>
+            <a href="{{ url_for('home')}}">Home</a>
+            <a href="{{ url_for('bot')}}">Bot</a>
+            <a href="{{ url_for('realbid')}}">Bid</a>
+            <a href="{{ url_for('faq') }}">FAQ</a>
+            <a href="{{ url_for('login') }}">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="auction-section">
+            <div class="text-content">
+                <h1>{{carname}}</h1>
+                <div class="countdown-timer" id="countdown">Auction ends in: --:--:--</div>
+                <p>
+                    Explore our diverse collection of premium vehicles,<br /> carefully curated for your bidding pleasure.
+                </p>
+
+                <div class="bid-section">
+                    <input type="number" id="bidAmount" placeholder="Enter your bid (£)" />
+                    <button class="place-bid-button" id="placeBidBtn" onclick="placeBid()">Place Bid</button>
+                    <div class="latest-bid" id="latestBid">Current Bid: £3610.00</div>
+                    <div class="error-message" id="errorMessage"></div>
+                    <div class="winner-message" id="winnerMessage"></div>
+                </div>
+            </div>
+
+            <div class="image-content">
+                <img src="{{ url_for('static', filename=pic) }}" alt="Vintage Car" />
+            </div>
+        </section>
+
+        <section class="hero-section">
+            <div class="hero-image">
+                <img src="http://127.0.0.1:5000/static/images/car1.jpg" alt="Orange Car" />
+            </div>
+            <div class="hero-text">
+                <h1>Discover Your<br>Dream Car</h1>
+                <p>
+                    Welcome to our live car auction, where you can browse, bid, and own the luxury or performance vehicle of your dreams. With real-time bidding and a countdown timer
+                </p>
+
+                <a href="https://discord.gg/XxHfPDPG"> <button class="btn">Join Now</button></a>
+            </div>
+
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="{{url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo" />
+                <p>© 2025 RideAuct, Inc.<br>All rights reserved.</p>
+            </div>
+
+            <div class="footer-links">
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div>
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Terms</a></li>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Sitemap</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script>
-    let currentBid = 3610.00;
-    const bidDisplay = document.getElementById('latestBid');
-    const errorMessage = document.getElementById('errorMessage');
-    const winnerMessage = document.getElementById('winnerMessage');
-    const bidInput = document.getElementById('bidAmount');
-    const placeBidBtn = document.getElementById('placeBidBtn');
-    const countdownElement = document.getElementById('countdown');
+    <script>
+        let currentBid = 3610.00;
+        const bidDisplay = document.getElementById('latestBid');
+        const errorMessage = document.getElementById('errorMessage');
+        const winnerMessage = document.getElementById('winnerMessage');
+        const bidInput = document.getElementById('bidAmount');
+        const placeBidBtn = document.getElementById('placeBidBtn');
+        const countdownElement = document.getElementById('countdown');
 
-    function placeBid() {
-      const bidValue = parseFloat(bidInput.value);
-      if (isNaN(bidValue) || bidValue <= 0) {
-        errorMessage.textContent = "Please enter a valid positive bid.";
-        return;
-      }
+        function placeBid() {
+            const bidValue = parseFloat(bidInput.value);
+            if (isNaN(bidValue) || bidValue <= 0) {
+                errorMessage.textContent = "Please enter a valid positive bid.";
+                return;
+            }
 
-      if (bidValue > currentBid) {
-        currentBid = bidValue;
-        bidDisplay.textContent = `Current Bid: £${currentBid.toFixed(2)}`;
-        errorMessage.textContent = "";
-        bidInput.value = "";
-      } else {
-        errorMessage.textContent = `Bid must be greater than the current bid (£${currentBid.toFixed(2)}).`;
-      }
-    }
+            if (bidValue > currentBid) {
+                currentBid = bidValue;
+                bidDisplay.textContent = `Current Bid: £${currentBid.toFixed(2)}`;
+                errorMessage.textContent = "";
+                bidInput.value = "";
+            } else {
+                errorMessage.textContent = `Bid must be greater than the current bid (£${currentBid.toFixed(2)}).`;
+            }
+        }
 
-    const auctionEndTime = new Date("{{ timer}}").getTime();
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = auctionEndTime - now;
+        const auctionEndTime = new Date("{{ timer}}").getTime();
 
-      if (distance <= 0) {
-        countdownElement.textContent = "Auction has ended.";
-        placeBidBtn.classList.add("disabled");
-        placeBidBtn.style.opacity = "0.5";
-        placeBidBtn.style.pointerEvents = "none";
-        bidDisplay.textContent = `Winning Bid: £${currentBid.toFixed(2)}`;
-        winnerMessage.textContent = "";
-        clearInterval(timerInterval);
-        return;
-      }
-      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((distance / (1000 * 60)) % 60);
-      const seconds = Math.floor((distance / 1000) % 60);
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = auctionEndTime - now;
 
-      countdownElement.textContent =
-        `Auction ends in: ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-    }
+            if (distance <= 0) {
+                countdownElement.textContent = "Auction has ended.";
+                placeBidBtn.classList.add("disabled");
+                placeBidBtn.style.opacity = "0.5";
+                placeBidBtn.style.pointerEvents = "none";
+                bidDisplay.textContent = `Winning Bid: £${currentBid.toFixed(2)}`;
+                winnerMessage.textContent = "";
+                clearInterval(timerInterval);
+                return;
+            }
+            const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((distance / (1000 * 60)) % 60);
+            const seconds = Math.floor((distance / 1000) % 60);
 
-    const timerInterval = setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
+            countdownElement.textContent =
+                `Auction ends in: ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+
+        const timerInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
 </body>
+
 </html>

@@ -10,15 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Courier+New&display=swap" rel="stylesheet">
     <style>
-
-
-
-
-* {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            margin: 0;font-family:'Courier New', Courier, monospace;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
         }
         
         body {
@@ -29,7 +26,6 @@
             position: relative;
         }
         
-        /* Navbar styles from Code 1 */
         header {
             background-color: #d9dacc;
             padding: 20px 50px;
@@ -39,7 +35,7 @@
             flex-wrap: wrap;
             width: 100%;
         }
-
+        
         .logo {
             display: flex;
             align-items: center;
@@ -47,26 +43,26 @@
             font-weight: 700;
             color: #000;
         }
-
+        
         .logo img {
             width: 300px;
             margin-right: 10px;
         }
-
+        
         nav {
             display: flex;
             gap: 30px;
             flex-wrap: wrap;
             font-weight: 500;
         }
-
+        
         nav a {
             text-decoration: none;
             color: #444;
             font-size: 1rem;
             transition: color 0.3s;
         }
-
+        
         nav a:hover {
             color: #000;
         }
@@ -243,8 +239,8 @@
             margin-right: auto;
             text-align: left;
         }
-
         /* Footer styles from Code 1 */
+        
         .footer {
             background-color: #fffef2;
             padding: 40px;
@@ -252,7 +248,7 @@
             border-top: 1px solid #ccc;
             width: 100%;
         }
-
+        
         .footer-content {
             display: flex;
             justify-content: space-around;
@@ -260,17 +256,17 @@
             max-width: 1200px;
             margin: auto;
         }
-
+        
         .footer-logo {
             flex: 1;
             margin-bottom: 20px;
         }
-
+        
         .footer-logo .logo {
             width: 320px;
             margin-bottom: 50px;
         }
-
+        
         .footer-links {
             display: flex;
             flex: 2;
@@ -279,82 +275,73 @@
             gap: 50px;
             flex-wrap: wrap;
         }
-
+        
         .footer-links h4 {
             font-size: 16px;
             margin-bottom: 10px;
             color: #333;
         }
-
+        
         .footer-links ul {
             list-style: none;
             padding: 0;
         }
-
+        
         .footer-links ul li {
             margin-bottom: 8px;
         }
-
+        
         .footer-links ul li a {
             text-decoration: none;
             color: #333;
             transition: 0.2s ease;
         }
-
+        
         .footer-links ul li a:hover {
             text-decoration: underline;
         }
-
         /* Responsive styles */
+        
         @media (max-width: 768px) {
             header {
                 padding: 20px;
                 flex-direction: column;
                 gap: 15px;
             }
-
             .logo {
                 font-size: 1.3rem;
             }
-
             nav {
                 gap: 15px;
                 justify-content: center;
             }
-
             .main-heading h1 {
                 font-size: 3rem;
             }
-
             .chat-header {
                 font-size: 1.2rem;
             }
-
             .footer-content {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
             }
-
             .footer-links {
                 justify-content: center;
                 gap: 30px;
             }
         }
-
+        
         @media (max-width: 480px) {
             .main-heading h1 {
                 font-size: 2.5rem;
             }
-
             .main-heading h2 {
                 font-size: 1.2rem;
             }
-
             .footer {
                 padding: 30px 20px;
             }
-
             .footer-links {
                 flex-direction: column;
                 gap: 20px;
@@ -371,20 +358,18 @@
         </div>
         <nav>
             <a href="{{ url_for('home')}}">Home</a>
-      <a href="{{ url_for('bot')}}">Bot</a>
-      <a href="{{ url_for('realbid')}}">Bid</a>
-      <a href="{{ url_for('faq') }}">FAQ</a>
-      <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('bot')}}">Bot</a>
+            <a href="{{ url_for('realbid')}}">Bid</a>
+            <a href="{{ url_for('faq') }}">FAQ</a>
+            <a href="{{ url_for('login') }}">Login</a>
         </nav>
     </header>
 
-    <!-- Chat container -->
     <div class="chat-container">
         <div class="chat-header-container">
             <div class="chat-header">Ask Me Anything About Cars!</div>
         </div>
 
-        <!-- Fixed Center Background Heading -->
         <div class="main-heading">
             <h1>AR</h1>
             <h2>CHATBOT</h2>
@@ -397,16 +382,13 @@
         </div>
     </div>
 
-    <!-- Footer from Code 1 -->
     <footer class="footer">
         <div class="footer-content">
-            <!-- Logo and Copyright -->
             <div class="footer-logo">
                 <img src="logo.png" alt="Logo" class="logo" />
                 <p>© 2025 RideAuct, Inc.<br>All rights reserved.</p>
             </div>
-    
-            <!-- Links: Quick, Company, Resources -->
+
             <div class="footer-links">
                 <div>
                     <h4>Quick Links</h4>
@@ -440,9 +422,8 @@
     </footer>
 
     <script>
-        // Replace this with your actual Gemini API key
         const GEMINI_API_KEY = "AIzaSyB5qUBYtuMMFUloOA5gRnpC-Br-aYaD4tc";
-        
+
         const micBtn = document.querySelector(".mic-btn");
 
         if (!("webkitSpeechRecognition" in window)) {
@@ -539,7 +520,7 @@
                     if (el.innerText === "Typing...") el.remove();
                 });
 
-                const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I didn't understand that.";
+                const reply = data ? .candidates ? .[0] ? .content ? .parts ? .[0] ? .text || "Sorry, I didn't understand that.";
                 appendMessage(reply, "bot");
 
             } catch (error) {
