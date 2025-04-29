@@ -1,15 +1,27 @@
 
 const maxAccounts = 20;
 
+
+
+
+
 function toggleForm() {
   document.getElementById("loginBox").classList.toggle("active");
   document.getElementById("signupBox").classList.toggle("active");
 }
 
+
+
+
 function validateEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 }
+
+
+
+
+
 
 function validatePassword(password) {
   if (password.length < 8) return "Password must be at least 8 characters long.";
@@ -25,6 +37,10 @@ function markValid(input, errorDiv) {
   input.classList.add('valid');
   errorDiv.textContent = '';
 }
+
+
+
+
 
 function markError(input, errorDiv, message) {
   input.classList.remove('valid');
