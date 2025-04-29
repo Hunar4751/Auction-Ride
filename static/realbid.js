@@ -8,6 +8,11 @@ window.addEventListener('scroll', function() {
     }
 });
 
+
+
+
+
+
 const auctionEndDate = [
     new Date("2025-11-29T02:34:00").getTime(),
     new Date("2025-12-01T02:34:00").getTime(),
@@ -20,6 +25,12 @@ const auctionEndDate = [
     new Date("2025-12-08T02:34:00").getTime(),
 ];
 
+
+
+
+
+
+
 function updateCountdown(index) {
     const now = new Date().getTime();
     const distance = auctionEndDate[index] - now;
@@ -30,6 +41,10 @@ function updateCountdown(index) {
         return;
     }
 
+
+
+
+    
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
